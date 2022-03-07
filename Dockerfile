@@ -1,5 +1,5 @@
 # **The build env**
-FROM node:16-bullseye as build
+FROM node:14-bullseye as build
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ COPY package.json ./
 COPY package-lock.json ./
 
 RUN npm ci
-RUN npm i react-scripts@4.0.3 -g
+# RUN npm i react-scripts@4.0.3 -g
 
 COPY ./ ./
 
@@ -19,5 +19,4 @@ COPY --from=build /app/build /usr/share/nginx/html
 
 EXPOSE 80
 
-CMD [ "nginx", '-g', 'daemon off;' ]
-
+CMD [ "nginx", "-g", "daemon off;" ]

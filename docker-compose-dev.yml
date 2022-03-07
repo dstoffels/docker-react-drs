@@ -13,7 +13,7 @@ services:
       - '3002:3000'
   docker-react-test:
     container_name: docker-react-test
-    image: docker-react-crm_docker-react-dev
+    image: docker-react-drs_docker-react-dev
     volumes:
       - .:/app
       - '/app/node_modules'
