@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  docker-react:
+    container_name: docker-react-drs
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - '8080:80'
